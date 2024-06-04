@@ -80,7 +80,7 @@ function LoginCompo() {
                     <input
                         id="password"
                         type="password"
-                        placeholder="Enter your password"
+                        placeholder="Enter your state"
                         className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-blue-200"
                     />
                 </div>
