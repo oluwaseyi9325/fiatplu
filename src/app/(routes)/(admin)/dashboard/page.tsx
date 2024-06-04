@@ -39,7 +39,7 @@ const merchantData=[
            <div className='md:grid grid-cols-3 gap-5 bg-white rounded-lg shadow-lg p-3'>
            {
                 merchantData.map((val,i)=>
-                  <div className={`bg-[${val.bg}] p-5 rounded-lg text-white`}>
+                  <div key={i} className={`bg-[${val.bg}] p-5 rounded-lg text-white`}>
                    {val.icon}
                     <div className='font-bold text-5xl'>{val.value}</div>
                     <div>{val.title}</div>
@@ -61,7 +61,7 @@ const merchantData=[
             <div className='text-2xl font-bold'>Recent Messages</div>
             {
               [1,2,3,4,5].map((val,i)=>
-              <div className='flex my-2 justify-between items-center gap-2'>
+              <div key={i} className='flex my-2 justify-between items-center gap-2'>
                 <Image src={require("../../../../assets/avatar.png")} alt={''}/>
                 <div>
                   <div>James p. chris</div>
