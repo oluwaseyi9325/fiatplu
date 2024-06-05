@@ -18,11 +18,23 @@ const config = {
       },
     },
     extend: {
-     
+      colors: {
+        customTextColor: "#4C4C66",
+        customOrangeTextColor: " #F8A21C",
+      },
       
+      backgroundColor: {
+        customOrangeBackground: " #F8A21C",
+        customOrangeBackgroundDarker: "#D99017",
+      },
+
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
       },
     },
   },
