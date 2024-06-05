@@ -10,7 +10,7 @@ const Header = ({ toggleSidebar }:any) => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
       </button>
-       <div className='bg-[#c7ab80] p-3 rounded-full text-white lg:block hidden text-center'>Post an order</div>
+       <div className='bg-[#F9A21B] px-10 py-2 rounded-lg text-white lg:block hidden text-center text-2xl'>Post an order</div>
        <div className="border p-2 rounded-lg lg:flex gap-2 items-center  hidden">
        <CiSearch size={20} color="#A1A1A1"/>
         <input placeholder="Search..." />

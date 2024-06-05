@@ -3,7 +3,7 @@ import { MdDashboard, MdPeople, MdSettings, MdAttachMoney, MdEmail, MdRateReview
 
 const Sidenav = ({ isOpen, toggleSidebar }: any) => {
   return (
-    <div className={`fixed flex   justify-center  top-0 left-0 h-full w-64 bg-[#2b2b2b] text-white p-4 transition-transform transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 z-20`}>
+    <div className={`fixed flex justify-center  top-0 left-0 h-full w-64 bg-[#2b2b2b] text-white p-4 transition-transform transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 z-20`}>
      <div className="">
      <div className="flex items-center  my-6">
         <Image src={require("../../assets/logo.png")} alt="Logo" className="" />
