@@ -1,22 +1,27 @@
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { MdDashboard, MdPeople, MdSettings, MdAttachMoney, MdEmail, MdRateReview, MdExitToApp } from "react-icons/md";
 
 const Sidenav = ({ isOpen, toggleSidebar }: any) => {
+  const pathName=usePathname()
+  console.log(pathName)
   return (
     <div className={`fixed flex justify-center  top-0 left-0 h-full w-64 bg-[#2b2b2b] text-white p-4 transition-transform transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 z-20`}>
      <div className="">
-     <div className="flex items-center  my-6">
+     <div className="flex items-center pb-5 my-6">
         <Image src={require("../../assets/logo.png")} alt="Logo" className="" />
-      </div>
+    </div>
       <nav className="flex items-center justify-center">
         <ul className="space-y-10">
-          <SidebarItem icon={<MdDashboard size={24} />} text="Dashboard" />
-          <SidebarItem icon={<MdPeople size={24} />} text="Analytics" />
-          <SidebarItem icon={<MdEmail size={24} />} text="Messages" />
-          <SidebarItem icon={<MdAttachMoney size={24} />} text="Create an offer" />
-          <SidebarItem icon={<MdRateReview size={24} />} text="Transactions" />
-          <SidebarItem icon={<MdSettings size={24} />} text="Settings" />
-          <SidebarItem icon={<MdExitToApp size={24} />} text="Logout" />
+          <SidebarItem icon={<MdDashboard color={`${pathName=="/dashboard"?"#F9A21B":""}`} size={24} />} textColor={pathName} path="Dashboard" text="Dashboard" />
+          <SidebarItem icon={<MdPeople size={24} color={`${pathName=="/analytics"?"#F9A21B":""}`} />} textColor={pathName} path="Analytics"  text="Analytics" />
+          <SidebarItem icon={<MdEmail size={24} color={`${pathName=="/chat"?"#F9A21B":""}`}/> } textColor={pathName} path="Chat"  text="Chat" />
+          <SidebarItem icon={<MdAttachMoney size={24} color={`${pathName=="/orders"?"#F9A21B":""}`} />} textColor={pathName} path=""  text="Orders" />
+          <SidebarItem icon={<MdRateReview size={24} color={`${pathName=="/transactions"?"#F9A21B":""}`} />} textColor={pathName} path="Transactions"  text="Transactions" />
+          <SidebarItem icon={<MdSettings size={24} color={`${pathName=="/setttings"?"#F9A21B":""}`} />} textColor={pathName} path="Settings"  text="Settings" />
+          <SidebarItem icon={<MdExitToApp size={24} />} textColor={pathName} path="signin"  text="Logout" />
+          <div className='bg-[#F9A21B] px-10 py-2 rounded-lg text-white block lg:hidden text-center text-2xl'>Post an order</div>
         </ul>
       </nav>
       <button onClick={toggleSidebar} className="absolute top-4 right-4 md:hidden text-white">
@@ -29,11 +34,13 @@ const Sidenav = ({ isOpen, toggleSidebar }: any) => {
   );
 };
 
-const SidebarItem = ({ icon, text }: any) => {
+const SidebarItem = ({ icon, text,textColor }: any) => {
   return (
     <li className="flex items-center gap-4">
       {icon}
-      <a href={`#${text.toLowerCase()}`} className="hover:text-gray-300">{text}</a>
+      <Link href={`${text.toLowerCase()}`}
+       className={`hover:text-gray-300
+        ${textColor==`/${text.toLowerCase()}`?"text-[#F9A21B]":null}`}>{text}</Link>
     </li>
   );
 };

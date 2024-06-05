@@ -29,7 +29,7 @@ function SignUpCompo() {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      console.log("Form data", values);
+      console.log("Form data and ", values);
     },
   });
 
@@ -42,6 +42,7 @@ function SignUpCompo() {
             <div className="flex justify-center md:justify-start order-1 md:order-2 h-9 my-auto mb-[20px] md:mb-0">
               <Image alt="" src={require("@/assets/loginlogo.png")} />
             </div>
+
             {/* Hero Section*/}
             <div className="text-area md:ml-8 mt-4 md:mt-0 order-2 md:order-1">
               <h2 className="text-[36px] leading-[32px] tracking-[0.15px] font-inter text-customTextColor font-semibold">
