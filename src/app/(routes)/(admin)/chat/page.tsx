@@ -20,9 +20,7 @@ function Page() {
     <div className="flex flex-col min-h-screen bg-white">
       <Sidenav isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <div className="flex-1 ml-0 md:ml-64 transition-all flex flex-col">
-     
-        
-        <section className="p-6 flex-1 flex flex-col lg:flex-row gap-6 bg-white">
+        <section className="lg:p-6 flex-1 flex flex-col lg:flex-row gap-6 bg-white">
           <div className="flex-1 lg:flex-none lg:w-1/3 bg-[#FFF8ED]">
             <div className="bg-white p-6 rounded-lg">
             <div className="flex justify-between mb-4 items-center gap-4">

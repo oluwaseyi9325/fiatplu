@@ -28,13 +28,13 @@ function Page() {
       <Sidenav isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <Header toggleSidebar={toggleSidebar} />
       <div className="flex-1 ml-0 md:ml-64 pt-16 transition-all">
-        <section className="lg:p-[80px] p-8 flex flex-col lg:flex-row gap-6">
+        <section className="lg:p-[80px] p-4 mt-5 flex flex-col lg:flex-row gap-6">
           <div className="flex-1">
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
               <div className='bg-white p-6 rounded-lg text-black flex flex-col items-start'>
                 <div className='text-xl'>Total Oders</div>
                 <div className='text-xl mt-8'>Total of 48 active orders</div>
-                <div className='bg-[#F9A21B] mt-2 px-20 py-2 rounded-lg shadow text-white lg:block hidden text-center text-1xl'>SEE ALL</div>
+                <div className='bg-[#F9A21B] mt-2 px-20 py-2 rounded-lg shadow text-white text-center text-1xl'>SEE ALL</div>
               </div>
             
                 <div  className={`bg-white p-6 rounded-lg text-black flex flex-col items-start`}>
