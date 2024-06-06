@@ -1,10 +1,13 @@
+// Required for Next.js to enable client-side rendering
 "use client";
+
 import React from "react";
 import Image from "next/image";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
 function SignUpCompo() {
+  // Define validation schema using Yup
   const validationSchema = Yup.object({
     firstname: Yup.string().required("First Name is required"),
     lastname: Yup.string().required("Last Name is required"),
@@ -18,6 +21,7 @@ function SignUpCompo() {
     state: Yup.string().required("State of Origin is required"),
   });
 
+  // Initialize formik with form data, validation schema, and submit handler
   const formik = useFormik({
     initialValues: {
       firstname: "",
@@ -29,7 +33,7 @@ function SignUpCompo() {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      console.log("Form data and ", values);
+      console.log("Form data: ", values);
     },
   });
 
@@ -43,7 +47,7 @@ function SignUpCompo() {
               <Image alt="" src={require("@/assets/loginlogo.png")} />
             </div>
 
-            {/* Hero Section*/}
+            {/* Hero Section */}
             <div className="text-area md:ml-8 mt-4 md:mt-0 order-2 md:order-1">
               <h2 className="text-[36px] leading-[32px] tracking-[0.15px] font-inter text-customTextColor font-semibold">
                 Getting started
@@ -55,7 +59,9 @@ function SignUpCompo() {
           </div>
 
           <div className="mt-[40px] flex flex-col md:flex-row gap-[20px] justify-center items-center md:justify-normal md:items-start">
-            <div className="relative w-[114px] h-[100px] rounded-md shadow-lg border bg-gray-300">
+            {/* Profile picture placeholder */}
+            <div className="relative w-[114px] h-[100px] rounded-md shadow-lg border bg-gray-200">
+              {/* Uncomment the Image tag below to display profile picture */}
               {/* <Image
                 src={require("@/assets/avatar.png")}
                 alt="profile picture"
@@ -63,6 +69,8 @@ function SignUpCompo() {
                 objectFit="fill"
               /> */}
             </div>
+
+            {/* Upload and reset buttons */}
             <div className="my-auto">
               <div className="flex gap-[15px] mb-[15px]">
                 <button className="bg-customOrangeBackground text-white rounded-[6px] py-1 px-3 hover:bg-customOrangeBackgroundDarker">
@@ -77,6 +85,8 @@ function SignUpCompo() {
               </p>
             </div>
           </div>
+
+          {/* Sign-up form */}
           <form
             onSubmit={formik.handleSubmit}
             className="w-full flex flex-col lg:flex-row flex-wrap mt-5 md:gap-x-[25px]"

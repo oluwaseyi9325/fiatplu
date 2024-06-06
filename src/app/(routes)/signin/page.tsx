@@ -1,10 +1,14 @@
+// Required for Next.js to enable client-side rendering
 "use client";
+
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import Image from "next/image";
 
+// LoginCompo Component
 const LoginCompo = () => {
+  // Initialize formik with form data, validation schema, and submit handler
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -27,11 +31,12 @@ const LoginCompo = () => {
   return (
     <section className="flex justify-center items-center md:px-0 px-5 h-screen">
       <div className="w-full md:w-2/6 px-4 border shadow-lg rounded-lg p-10 bg-white">
-        {/* <div className="flex justify-center mb-[63.6px] mt-[65px]"> */}
+        {/* Logo Section */}
         <div className="flex justify-center">
           <Image alt="" src={require("../../../assets/loginlogo.png")} />
         </div>
 
+        {/* Welcome Message */}
         <div className="mt-4 text-center text-customTextColor leading-[34.5px]">
           <h2 className="text-[23px] font-semibold font-poppins opacity-90 mb-[6px]">
             Welcome to Fiatplug! 👋
@@ -41,9 +46,10 @@ const LoginCompo = () => {
           </p>
         </div>
 
+        {/* Login Form */}
         <form
           onSubmit={formik.handleSubmit}
-          className="mt-6  mx-auto px-[20px]"
+          className="mt-6 mx-auto px-[20px]"
         >
           <div>
             <label
@@ -63,7 +69,6 @@ const LoginCompo = () => {
                   : ""
               }`}
             />
-
             {formik.touched.email && formik.errors.email ? (
               <p className="text-red-500 text-sm">{formik.errors.email}</p>
             ) : null}
@@ -92,6 +97,7 @@ const LoginCompo = () => {
             ) : null}
           </div>
 
+          {/* Remember Me and Forgot Password Links */}
           <div className="flex justify-between items-center mt-4">
             <div className="flex">
               <input
@@ -113,6 +119,7 @@ const LoginCompo = () => {
             </a>
           </div>
 
+          {/* Submit Button */}
           <div className="mt-6">
             <button
               type="submit"
