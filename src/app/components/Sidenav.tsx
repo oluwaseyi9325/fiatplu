@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MdDashboard, MdPeople, MdSettings, MdAttachMoney, MdEmail, MdRateReview, MdExitToApp } from "react-icons/md";
 
+
 const Sidenav = ({ isOpen, toggleSidebar }: any) => {
   const pathName=usePathname()
   console.log(pathName)
@@ -21,7 +22,7 @@ const Sidenav = ({ isOpen, toggleSidebar }: any) => {
           <SidebarItem icon={<MdRateReview size={24} color={`${pathName=="/transactions"?"#F9A21B":""}`} />} textColor={pathName} path="Transactions"  text="Transactions" />
           <SidebarItem icon={<MdSettings size={24} color={`${pathName=="/setttings"?"#F9A21B":""}`} />} textColor={pathName} path="Settings"  text="Settings" />
           <SidebarItem icon={<MdExitToApp size={24} />} textColor={pathName} path="signin"  text="Logout" />
-          <div className='bg-[#F9A21B] px-10 py-2 rounded-lg text-white block lg:hidden text-center text-2xl'>Post an order</div>
+          <div className='bg-[#F9A21B] px-10 py-2 rounded-lg text-white block lg:hidden text-center text-2]xl'>Post an order</div>
         </ul>
       </nav>
       <button onClick={toggleSidebar} className="absolute top-4 right-4 md:hidden text-white">
